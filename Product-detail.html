@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta author="Phước Tín" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./asset/Logo-favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- link favicon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--font-awesome-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- links font chữ -->
+    <!-- test header -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --font-heading: "Sen", sans-serif;
+        --primary0color: #ffb900;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      /* khôi phục cỡ chữ mặc định theo rem */
+      body {
+        font-size: 1.6rem;
+        font-family: "Poppins", sans-serif;
+        min-width: 1200px;
+      }
+      /* đây là cấu trúc page dự án */
+
+      /*============================common=======================*/
+      a {
+        text-decoration: none;
+      }
+      .main-content {
+        width: 1170px;
+        max-width: calc(100% - 48px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .heading-lv2 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 3.8rem;
+        line-height: 1.27;
+        letter-spacing: -2%;
+      }
+      /*============================header======================*/
+      .header {
+        background: #d2bf8a;
+      }
+      .header.fixed {
+        position: sticky;
+        top: -28px;
+        z-index: 1;
+      }
+      .header .body {
+        display: flex;
+        align-items: center;
+        padding: 36px 0 0 8px;
+      }
+      .nav {
+        margin-left: auto;
+      }
+      .nav ul {
+        display: flex;
+      }
+      .nav a {
+        color: #5f5b53;
+        font-size: 1.6rem;
+        padding: 8px 21px;
+        position: relative;
+      }
+      .nav li.active a,
+      .nav a:hover {
+        color: #171100;
+        /* font-weight: 600; */
+        /* thay vì sử dụng font-weight thì sử dụng text-shadow */
+        text-shadow: 1px 0 0 currentColor;
+      }
+      .nav li.active a::after {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 2px;
+        /* top: 73px; */
+        bottom: 6px;
+        left: 21px;
+        border-radius: 1px;
+        background: #171100;
+        position: absolute;
+      }
+      .header .btn-sign-up {
+        min-width: 144px;
+      }
+      .header .action {
+        margin-left: 49px;
+      }
+    </style>
+
+    <link rel="stylesheet" href="reset.css" />
+    <!--reset default value of html element-->
+    <link rel="stylesheet" href="product-detail.css" />
+    <!-- link css -->
+    <script src="./asset/js/details-protduct.js"></script>
+    <title>Chi tiết sản phẩm</title>
+  </head>
+  <body class="page-detail">
+    <!--header-test-->
+    <header class="header fixed">
+      <div class="main-content">
+        <div class="body">
+          <!-- logo -->
+          <img src="./assets/img/Logo.svg" alt="Lesson." class="logo" />
+          <!-- nav -->
+          <nav class="nav">
+            <ul>
+              <li class="active">
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Pricing</a>
+              </li>
+              <li>
+                <a href="#">Reviews</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- button -->
+          <div class="action">
+            <a href="#!" class="btn btn-sign-up">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- <header class="header">
+      <div class="header-nav"></div>
+    </header> -->
+
+    <main class="content">
+      <div class="product__view--container">
+        <div class="product__essential-media-parent">
+          <div class="product__essential-media">
+            <div class="product__view-image-and-add-to-cart">
+              <div class="product__view-image"></div>
+              <div class="product__view-add-box">
+                <button
+                  type="button"
+                  title="Thêm vào giỏ hàng"
+                  class="btn btn__add-to-cart"
+                >
+                  <span class="btn__icon-cart"
+                    ><i class="fa-solid fa-cart-plus"></i
+                  ></span>
+                  <span>Thêm vào giỏ hàng</span>
+                </button>
+                <button type="button" title="Mua ngay" class="btn btn__buy-now">
+                  <span>Mua ngay</span>
+                </button>
+              </div>
+            </div>
+            <div class="product__view-policy-desktop">
+              <div class="product__view-policy-title">Chính sách ưu đãi</div>
+              <div class="product__view-attribute">
+                <div class="attribute__row attribute__row--ship">
+                  <div class="item__icon">
+                    <!-- <img
+                      src="./asset/image/icon/ship.svg"
+                      alt="truck-fast"
+                      class="icon__svg"
+                    /> -->
+                    <i class="fa-solid fa-truck-fast"></i>
+                  </div>
+                  <div class="item__title">Thời gian giao hàng:</div>
+                  <div class="item__content">
+                    Giao hàng nhanh sau 24h đặt hàng, uy tín, chất lượng
+                  </div>
+                </div>
+                <div class="attribute__row attribute__row--exchange">
+                  <div class="item__icon">
+                    <img
+                      class="icon__svg"
+                      src="./asset/image/icon/refund-box.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="item__title">Chính sách đổi trả:</div>
+                  <div class="item__content">Đổi trả miễn phí toàn quốc</div>
+                </div>
+                <div class="attribute__row attribute__row--wholesaler">
+                  <div class="item__icon">
+                    <!-- <img
+                      src="./asset/image/icon/file-invoice-dollar-solid.svg"
+                      alt="receipt"
+                      class="icon__svg"
+                    /> -->
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                  </div>
+                  <div class="item__title">Hỗ trợ xuất hóa đơn:</div>
+                  <div class="item__content">
+                    Xuất hóa đơn GTGT khi mua số lượng lớn
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- nơi chưa hình ảnh và mua hàng-->
+
+        <div class="product__detail--essential-detail-parent">
+          <div class="product__detail--essential-detail">
+            <div class="block__content-product--detail">
+              <h1 class="kth__name-product--desktop">Tên sản phẩm</h1>
+              <div class="kth__addition-product">
+                <div class="product__view--meta">
+                  <div class="product__view--meta-one">
+                    <div class="product__view--meta-supplier">
+                      <span>Nhà cung cấp: </span>
+                      <span>tên nhà cung cấp</span>
+                    </div>
+                    <div class="product__view--meta-author">
+                      <span>Thương hiệu: </span> <span>tên thương hiệu</span>
+                    </div>
+                  </div>
+                  <div class="product__view--meta-two">
+                    <div class="product__view--meta-supplier">
+                      <span>Xuất xứ: </span>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="view__rate">
+                <div class="view__rate-left">
+                  <div class="ratings">
+                    <div class="rating__content">
+                      <table class="ratings-desktop">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <a onclick="prodComment.choiceTab('review');">
+                                <div class="rating-box">
+                                  <div class="rating"></div>
+                                </div>
+                              </a>
+                            </td>
+                            <td class="review-position">
+                              <p class="numbers-of-rating">
+                                (số lượt đánh giá)
+                              </p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="product__view-sold">
+                    <span class="product__view-sold-space">|</span>
+                    <div class="product__view-num">
+                      <span>Đã bán </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product__view--block-price">
+                <div id="product-details-price" class="product-price">
+                  <div class="price-box">
+                    <p class="special-price">
+                      <span class="price-label">Special Price</span>
+                      <span class="price" id="product-price-spe"
+                        >tiền sau khi giảm giá</span
+                      >
+                    </p>
+                    <p class="old-price">
+                      <span class="price-label">Regular Price</span>
+                      <span class="price" id="old-price-spe"
+                        >tiền trước khi giảm gía</span
+                      >
+                      <span class="discount-percent">phẩn trăm giảm giá</span>
+                    </p>
+                  </div>
+                  <div class="quantity-box">
+                    <div class="quantity-label">
+                      <label for="quantity">Số lượng:</label>
+                    </div>
+                    <div class="impact">
+                      <button type="button" onclick="changeQuantity(-1)">
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="1"
+                        max="100"
+                        value="1"
+                      />
+                      <button type="button" onclick="changeQuantity(1)">
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product__contain--block-details">
+                <h2 class="product__contain--block-details-title">
+                  Mô tả sản phẩm
+                </h2>
+                <div class="product__desc-content">
+                  <div class="desc-content">
+                    <p><strong>tên sản phẩm</strong></p>
+                    <p>chức năng khác của sản phẩm</p>
+                    <p></p>
+                    <!-- nhiều yếu tố -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end detail -->
+      </div>
+    </main>
+    <footer class="footer"></footer>
+  </body>
+</html>

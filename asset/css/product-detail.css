@@ -1,0 +1,38 @@
+/* include header css */
+
+/* ==============================comman=================================== */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+/* khôi phục cỡ chữ mặc định theo rem */
+.page-detail {
+  font-size: 1.6rem;
+  font-family: "Nunito", sans-serif;
+  /* min-width: 1200px; */
+}
+/* main content */
+.product__view--container {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+/* .product__essential-media
+  .product__view-policy-desktop
+  .product__view-attribute
+  .attribute__row
+  .item__icon
+  .icon__svg {
+  width: 10px;
+} */
+.product__essential-media
+  .product__view-image-and-add-to-cart
+  .product__view-image {
+  height: 200px;
+  background-color: blue;
+}
+.btn {
+  background-color: red;
+}
