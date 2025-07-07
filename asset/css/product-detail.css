@@ -4,35 +4,172 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --color-red: #c92127;
+}
 html {
   font-size: 62.5%;
 }
-/* khôi phục cỡ chữ mặc định theo rem */
+
 .page-detail {
   font-size: 1.6rem;
   font-family: "Nunito", sans-serif;
-  /* min-width: 1200px; */
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  /* max-width: 1024px; */
+  /* min-width: 500px; */
+}
+.header {
+  height: 150px;
+  width: 100%;
+  /* background-color: var(--color-red); */
 }
 /* main content */
 .product__view--container {
   display: flex;
   gap: 5px;
   justify-content: center;
+  margin-top: 10px;
 }
-/* .product__essential-media
-  .product__view-policy-desktop
-  .product__view-attribute
-  .attribute__row
-  .item__icon
-  .icon__svg {
-  width: 10px;
-} */
+.product__essential-media-parent {
+  width: 500px;
+  padding: 10px;
+  margin-right: 20px;
+  /* border: solid black; khung xác định vùng ảnh sản phẩm */
+  border-radius: 10px;
+  background-color: white;
+}
+.product__view-attribute .attribute__row .item__icon .fa-solid {
+  width: 25px;
+  color: var(--color-red);
+  padding: 2px;
+}
 .product__essential-media
   .product__view-image-and-add-to-cart
   .product__view-image {
-  height: 200px;
-  background-color: blue;
+  height: calc(100vh - 128px - 33px - 32px - 160px);
+  max-width: 450px;
+  max-height: 450px;
+  /* background-color: blue; */
 }
-.btn {
-  background-color: red;
+.product__view-image-and-add-to-cart .product__view-add-box .btn {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: #fff;
+  border: none;
+  padding: 0;
+  width: 190px;
+  min-width: 118px;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 10px;
+  border-radius: 15px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.product__view-image-and-add-to-cart .product__view-add-box .btn__add-to-cart {
+  background-color: #fff;
+  color: var(--color-red);
+  border: 1px solid var(--color-red);
+  margin-right: 63px;
+}
+.product__view-image-and-add-to-cart
+  .product__view-add-box
+  .btn__add-to-cart:hover {
+  background-color: var(--color-red);
+  color: white;
+  border: 1px solid var(--color-red);
+  margin-right: 63px;
+}
+.product__view-image-and-add-to-cart .product__view-add-box .btn:active {
+  transform: scale(0.97); /* Nhúng xuống nhẹ */
+}
+.product__essential-media .product__view-policy-desktop {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+}
+.product__essential-media
+  .product__view-policy-desktop
+  .product__view-policy-title {
+  font-weight: bold;
+  margin: 15px 0;
+}
+.product__view-policy-desktop .product__view-attribute .attribute__row {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.product__view-policy-desktop
+  .product__view-attribute
+  .attribute__row
+  .item__title {
+  font-weight: bold;
+  padding-right: 4px;
+}
+
+.product__detail--essential-detail-parent {
+  display: flex;
+  flex-direction: column;
+  width: 730px;
+  /* border: solid black; */
+  background-color: transparent;
+}
+.block__content-product--detail {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+.block__content-product {
+  margin-bottom: 10px;
+}
+.product__view--meta-one {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
+  line-height: 1.6rem;
+}
+.product__view--meta-two {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
+  line-height: 1.6rem;
+  padding-top: 10px;
+}
+.block__content-product-info {
+  display: flow-root;
+}
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.control {
+  display: flex;
+  align-items: center;
+}
+.control input {
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+.control button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+.product__content--block-details-title {
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
 }
